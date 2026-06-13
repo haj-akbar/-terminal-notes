@@ -1,4 +1,326 @@
-summary of necessary command\n0.The typical command format\n\tcommand option target\n1.pwd\n\tto findingout the current directory.(pwd = print working directiry)\n2.cd\n\tcd is short form of change directory\n\tThe important sign:(.., ., ~, /)\n3.ls\n\t to show detiails of folder\n\tThe important sign:(-l, -a, -la)\n\tnotice : maybe you show thing like drwxr-xr-x  5 ali ali 4096 Jun 10 Desktop
-if the first word starts with 'd', it means is folder else it prabably with '-' that means is file.
-\n4.mkdir\n\tIt short form of 'make directory' and the typical form id 'mkdir folder1 folder2 ...'\n\t notice : to make a nested folders you should use a '-p folder1/folder2/..'method as a opiton part\n5.touch\n\t for creating a new file\n6.echo\n\t to write down\n\t the necessary sign : (>(to replace), >>(to continue from last part))\n7.cat\n\t to open a smallfile\n\t8.less\n\tspace : next page\t b : previous page\t /sth : search a word \t q : quit\t (for open a large file)\n9.cp\n\t cp sth.sth folder\ new-name(optional).sth\n\t impotant sign : use '-r' to copy folder along with its contents\n10.mv\n\t to rename and move file\n\tTo rename mv name1.txt name2.txt\n\tTo move to other folder mv name1.txt folder/\n11.rm\n\t removing \t rm folder/sth.txt\t rm file1 file2 ... \n\t important signs :(-r (to remove full folder), -i (to ask before deleting), -rf  (to remove full folder without asking before))\n12.grep\n\t For searching a word on text file 'grep word' name.txt\n\t important signs : (*.txt (to select all file in this folder, -i (to dont pay attention for captal or small letters), -r (recursive search, example : grep -r word .), -n(to find a number line))\n13.find\n\t to find all file and folder in current directory\n\t find . (to find anything in current directory)\t -name sth.txt (to find sth with selected name)\t *.txt (to find all txt)\t -type (to find sth with selceted type)\t find folder(docs) - type sth - name*.txt (find a sth with secpial feature in selected directory)
-\n14.chmod\n\t when you use ls -l you probably see thing like -rw-r--r-- so .... the important part is -rw-r--r--\t we have 3type of prmissions\n\t 1.read\t2.write\t3.execute\n\t these premissions are defined for three groups : the owner, the group, and others. you can divide the important part to 3 small type with same length first part for owner secend part for group and last part for others.\n\t they can take a maximum of three perimissions. every part is like --- and they can have a 'r'(read), 'w'(write) or 'x' (execute)peremissions that you see such as xrw rw- r-- for 3 groups \n\t you can take and give a peremissions with this command chmod (s.o first letter)(-/+)peremission file.sth\n\t the other way to do it is use this command with numbers \n\t4=read\t2=write\t1=execute\t ,and after a chmod you have 3 place to put each number first place for owner secend for group and the last one for others. to give several peremissions you just add numbers together like chmod 750 name.sh \t it mean is owner (4+2+1) has all premissions,group has write and read premissions aand other has nothing
+Summary of Necessary Linux Commands
+
+0. The Typical Command Format
+
+    command [options] [target]
+
+    A typical Linux command usually has three parts:
+    - command: the main command
+    - options: extra settings for the command
+    - target: the file or folder that the command works on
+
+
+1. pwd
+
+    pwd means Print Working Directory.
+
+    It shows the current directory that you are in.
+
+
+2. cd
+
+    cd means Change Directory.
+
+    It is used to move between directories.
+
+    Important signs:
+
+    ..    Go to the parent directory
+    .     Current directory
+    ~     Home directory
+    /     Root directory
+
+
+3. ls
+
+    ls is used to list files and folders.
+
+    Important options:
+
+    -l    Shows details
+    -a    Shows hidden files
+    -la   Shows all files with details
+
+    Notice:
+
+    When you use ls -l, you may see something like this:
+
+    drwxr-xr-x  5 ali ali 4096 Jun 10 Desktop
+
+    If the first character is d, it means the item is a directory.
+    If the first character is -, it means the item is probably a file.
+
+
+4. mkdir
+
+    mkdir means Make Directory.
+
+    It is used to create new directories.
+
+    Basic usage:
+
+    mkdir folder1 folder2
+
+    Notice:
+
+    To create nested directories, use the -p option.
+
+    Example:
+
+    mkdir -p folder1/folder2/folder3
+
+
+5. touch
+
+    touch is used to create a new empty file.
+
+    Example:
+
+    touch file.txt
+
+
+6. echo
+
+    echo is used to print text or write text into a file.
+
+    Important signs:
+
+    >     Replaces the old content of the file
+    >>    Adds new content to the end of the file
+
+    Examples:
+
+    echo "Hello" > file.txt
+    echo "New line" >> file.txt
+
+
+7. cat
+
+    cat is used to open and display the content of a small file.
+
+    Example:
+
+    cat file.txt
+
+
+8. less
+
+    less is used to open and read large files.
+
+    Important keys:
+
+    Space    Next page
+    b        Previous page
+    /word    Search for a word
+    q        Quit
+
+
+9. cp
+
+    cp means Copy.
+
+    It is used to copy files or folders.
+
+    Basic usage:
+
+    cp source_file destination_folder/new_name.txt
+
+    Notice:
+
+    The new name is optional.
+
+    Important option:
+
+    -r    Copies a folder with all of its contents
+
+    Example:
+
+    cp -r folder1 folder2
+
+
+10. mv
+
+    mv means Move.
+
+    It is used to move or rename files and folders.
+
+    To rename a file:
+
+    mv old_name.txt new_name.txt
+
+    To move a file to another folder:
+
+    mv file.txt folder/
+
+
+11. rm
+
+    rm means Remove.
+
+    It is used to remove files or folders.
+
+    Examples:
+
+    rm file.txt
+    rm file1.txt file2.txt
+
+    Important options:
+
+    -r     Removes a folder and all of its contents
+    -i     Asks before deleting
+    -rf    Removes a folder and all of its contents without asking
+
+    Notice:
+
+    Be careful with rm -rf because it deletes files without confirmation.
+
+
+12. grep
+
+    grep is used to search for a word or text inside files.
+
+    Basic usage:
+
+    grep "word" name.txt
+
+    Important options:
+
+    -i       Ignores capital and small letters
+    -r       Searches recursively inside folders
+    -n       Shows the line number
+    *.txt    Searches inside all txt files in the current folder
+
+    Examples:
+
+    grep -i "hello" name.txt
+    grep -n "hello" name.txt
+    grep "hello" *.txt
+    grep -r "hello" .
+
+
+13. find
+
+    find is used to find files and folders.
+
+    Basic usage:
+
+    find .
+
+    This command finds everything in the current directory.
+
+    Important options:
+
+    -name    Searches by name
+    -type    Searches by type
+
+    Examples:
+
+    find . -name "file.txt"
+    find . -name "*.txt"
+    find . -type f -name "*.txt"
+    find docs/ -type f -name "*.txt"
+
+    Explanation:
+
+    -type f means files only.
+    -type d means directories only.
+    *.txt means all files that end with .txt.
+
+
+14. chmod
+
+    chmod means Change Mode.
+
+    It is used to change file and folder permissions.
+
+    When you use ls -l, you may see something like this:
+
+    -rw-r--r--
+
+    The important part is:
+
+    rw-r--r--
+
+    Permissions are divided into three groups:
+
+    1. Owner
+    2. Group
+    3. Others
+
+    There are three types of permissions:
+
+    r    Read
+    w    Write
+    x    Execute
+
+    Example:
+
+    -rw-r--r--
+
+    This means:
+
+    Owner: rw-    The owner can read and write
+    Group: r--    The group can only read
+    Others: r--   Others can only read
+
+    Symbolic method:
+
+    chmod u+x file.sh
+
+    This means: add execute permission to the owner.
+
+    Important letters:
+
+    u    User / Owner
+    g    Group
+    o    Others
+    a    All
+
+    Important signs:
+
+    +    Add permission
+    -    Remove permission
+
+    Numeric method:
+
+    Each permission has a number:
+
+    4    Read
+    2    Write
+    1    Execute
+    0    No permission
+
+    Example:
+
+    chmod 750 file.sh
+
+    Explanation:
+
+    7 = 4 + 2 + 1 = read, write, execute
+    5 = 4 + 1 = read, execute
+    0 = no permission
+
+    So chmod 750 means:
+
+    Owner has all permissions.
+    Group has read and execute permissions.
+    Others have no permissions.
+
+    Other examples:
+
+    chmod 755 file.sh
+    chmod 644 file.txt
+    chmod 700 private.sh
+
+
+15. man
+
+    man means Manual.
+
+    It is used to read the manual page of a command.
+
+    Example:
+
+    man ls
+
+    To quit the manual page, press q.
